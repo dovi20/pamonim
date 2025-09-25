@@ -35,7 +35,7 @@ sudo chown $USER:$USER /var/www/crm.pamonim.online
 
 # Clone your repository (replace with your actual repo URL)
 cd /var/www/crm.pamonim.online
-git clone https://github.com/yourusername/coming-soon-app.git .
+git clone https://github.com/yourusername/pamonim.git .
 ```
 
 ### Step 3: Install Dependencies and Build

@@ -1,4 +1,4 @@
-# Coming Soon - React Application
+# Pamonim - React Application
 
 A beautiful, responsive "Coming Soon" page built with React and Vite.
 
@@ -27,7 +27,7 @@ npm run preview
 ## 📁 Project Structure
 
 ```
-coming-soon-app/
+pamonim/
 ├── public/          # Static assets
 ├── src/             # Source code
 │   ├── App.jsx      # Main React component
