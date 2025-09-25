@@ -32,9 +32,9 @@ jobs:
         username: ${{ secrets.SERVER_USER }}
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
-          cd /path/to/your/app
+          cd /var/www/crm.pamonim.online
           git pull origin main
           npm ci
           npm run build
           # Restart your web server if needed
-          # sudo systemctl reload nginx
+          sudo systemctl reload nginx

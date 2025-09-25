@@ -30,11 +30,11 @@ npm install -g pm2
 ### Step 2: Upload Project to Server
 ```bash
 # Create directory for your project
-sudo mkdir -p /var/www/your-domain.com
-sudo chown $USER:$USER /var/www/your-domain.com
+sudo mkdir -p /var/www/crm.pamonim.online
+sudo chown $USER:$USER /var/www/crm.pamonim.online
 
 # Clone your repository (replace with your actual repo URL)
-cd /var/www/your-domain.com
+cd /var/www/crm.pamonim.online
 git clone https://github.com/yourusername/coming-soon-app.git .
 ```
 
@@ -50,16 +50,16 @@ npm run build
 ### Step 4: Configure Web Server (Nginx)
 ```bash
 # Create Nginx configuration
-sudo nano /etc/nginx/sites-available/your-domain.com
+sudo nano /etc/nginx/sites-available/crm.pamonim.online
 ```
 
 Add this configuration:
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com www.your-domain.com;
+    server_name crm.pamonim.online;
 
-    root /var/www/your-domain.com/dist;
+    root /var/www/crm.pamonim.online/dist;
     index index.html;
 
     location / {
@@ -68,14 +68,14 @@ server {
 
     # Optional: Add SSL (Let's Encrypt)
     # listen 443 ssl;
-    # ssl_certificate /etc/letsencrypt/live/your-domain.com/fullchain.pem;
-    # ssl_certificate_key /etc/letsencrypt/live/your-domain.com/privkey.pem;
+    # ssl_certificate /etc/letsencrypt/live/crm.pamonim.online/fullchain.pem;
+    # ssl_certificate_key /etc/letsencrypt/live/crm.pamonim.online/privkey.pem;
 }
 ```
 
 ```bash
 # Enable the site
-sudo ln -s /etc/nginx/sites-available/your-domain.com /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/crm.pamonim.online /etc/nginx/sites-enabled/
 
 # Test configuration
 sudo nginx -t
@@ -88,12 +88,12 @@ sudo systemctl reload nginx
 Create a deployment script on your server:
 ```bash
 # Create deployment script
-sudo nano /var/www/your-domain.com/deploy.sh
+sudo nano /var/www/crm.pamonim.online/deploy.sh
 ```
 
 ```bash
 #!/bin/bash
-cd /var/www/your-domain.com
+cd /var/www/crm.pamonim.online
 git pull origin main
 npm install
 npm run build
@@ -102,7 +102,7 @@ sudo systemctl reload nginx
 
 ```bash
 # Make it executable
-sudo chmod +x /var/www/your-domain.com/deploy.sh
+sudo chmod +x /var/www/crm.pamonim.online/deploy.sh
 ```
 
 ## 🚀 Option 2: GitHub Actions Auto-Deployment
@@ -132,7 +132,7 @@ The GitHub Actions workflow will automatically deploy when you push to main bran
 ### Manual Updates:
 ```bash
 # On your server
-cd /var/www/your-domain.com
+cd /var/www/crm.pamonim.online
 ./deploy.sh
 ```
 
@@ -150,7 +150,7 @@ git push origin main
 
 1. **Permission Errors**
    ```bash
-   sudo chown -R $USER:$USER /var/www/your-domain.com
+   sudo chown -R $USER:$USER /var/www/crm.pamonim.online
    ```
 
 2. **Port 80 Already in Use**
