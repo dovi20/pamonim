@@ -33,9 +33,9 @@ npm install -g pm2
 sudo mkdir -p /var/www/crm.pamonim.online
 sudo chown $USER:$USER /var/www/crm.pamonim.online
 
-# Clone your repository (replace with your actual repo URL)
+# Clone your repository
 cd /var/www/crm.pamonim.online
-git clone https://github.com/yourusername/pamonim.git .
+git clone https://github.com/dovi20/pamonim.git .
 ```
 
 ### Step 3: Install Dependencies and Build
@@ -94,7 +94,7 @@ sudo nano /var/www/crm.pamonim.online/deploy.sh
 ```bash
 #!/bin/bash
 cd /var/www/crm.pamonim.online
-git pull origin main
+git pull origin master
 npm install
 npm run build
 sudo systemctl reload nginx
@@ -141,7 +141,7 @@ cd /var/www/crm.pamonim.online
 # Make changes locally
 git add .
 git commit -m "Update coming soon page"
-git push origin main
+git push origin master
 ```
 
 ## 🛠️ Troubleshooting
